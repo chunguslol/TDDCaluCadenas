@@ -1,13 +1,13 @@
 function calculadorSumaDeCadena(cadena) {
-  var el = cadena.split(" ");
-  var resul = 0;
+  var elementos = cadena.split(" ");
+  var resultado = 0;
   if (!cadena) {
     return "No se puso nada en la cadena";
   }
-  for(var i = 0; i < el.length; i++){
-    resul = resul + el[i];
+  for(var iterador = 0; iterador < elementos.length; iterador++){
+    resultado += elementos[iterador];
   }
-  return resul;
+  return resultado;
 }
 
 export default calculadorSumaDeCadena;
