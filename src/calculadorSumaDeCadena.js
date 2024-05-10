@@ -5,7 +5,12 @@ function calculadorSumaDeCadena(cadena) {
     return "No se puso nada en la cadena";
   }
   for(var iterador = 0; iterador < elementos.length; iterador++){
-    resultado += parseInt(elementos[iterador]);//no hay refactorizacion
+    if(!isNaN(elementos[iterador])){
+      resultado += parseInt(elementos[iterador]);
+    }else{
+      return "Elemento no valido " + elementos[iterador];
+    }
+    
   }
   return resultado;
 }
