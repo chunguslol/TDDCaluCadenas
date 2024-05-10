@@ -1,2 +1,2 @@
-import calculador from "./calculador.js";
+import calculadorSumaDeCadena from "./calculadorSumaDeCadena.js";
 
