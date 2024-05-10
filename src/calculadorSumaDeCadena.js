@@ -2,7 +2,7 @@ function separarCadena(cadena) {
   if (!cadena) {
       return [];
   }
-  return cadena.split(" ");
+  return cadena.split(",");
 }
 
 function sumarElementosdeCadena(elementos) {
