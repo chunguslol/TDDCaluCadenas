@@ -7,6 +7,8 @@ describe("calculadorSumaDeCadena", () => {
   it("Deberia devolver la suma de la cadena y deberia reconocer al poner con , la cadena", () => {
     expect(calculadorSumaDeCadena("10,20")).toEqual(30);
   });
+  it("Deberia devolver la suma de la cadena y deberia reconocer al poner con - la cadena", () => {
+    expect(calculadorSumaDeCadena("10-20")).toEqual(30);
+  });
   
-
 });
