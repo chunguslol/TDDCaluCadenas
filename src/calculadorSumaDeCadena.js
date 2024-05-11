@@ -1,13 +1,15 @@
 function obtenerDelimitador(cadena) {
-  const coma = ",";
-  var delimitador = coma;
-  if (cadena.startsWith("//")) {
-      var inicioDelimitador = cadena.indexOf("[") + 1;
-      var finDelimitador = cadena.indexOf("]");
+  const delimitadorInicio = "//[";
+  const delimitadorFin = "]";
+  var delimitador = ",";
+  if (cadena.startsWith(delimitadorInicio)) {
+      var inicioDelimitador = cadena.indexOf(delimitadorInicio) + delimitadorInicio.length;
+      var finDelimitador = cadena.indexOf(delimitadorFin);
       delimitador = cadena.substring(inicioDelimitador, finDelimitador);
   }
   return delimitador;
 }
+
 
 function obtenerCadenaSinDelimitador(cadena) {
   if (cadena.startsWith("//")) {
@@ -20,8 +22,9 @@ function obtenerCadenaSinDelimitador(cadena) {
 function separarCadena(cadena) {
   const delimitador = obtenerDelimitador(cadena);
   const cadenaSinDelimitador = obtenerCadenaSinDelimitador(cadena);
-  return cadenaSinDelimitador.split(new RegExp("[,|-]" + "|" + delimitador));
+  return cadenaSinDelimitador.split(new RegExp("[,|-]" + "|" + delimitador.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')));
 }
+
 
 function sumarElementosdeCadena(elementos) {
   var resultado = 0;
