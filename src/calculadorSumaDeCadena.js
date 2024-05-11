@@ -17,13 +17,16 @@ function sumarElementosdeCadena(elementos) {
   var resultado = 0;
   for (var iterador = 0; iterador < elementos.length; iterador++) {
       if (!isNaN(elementos[iterador])) {
+        if (parseInt(elementos[iterador]) <= 1000) {
           resultado += parseInt(elementos[iterador]);
+        }
+
       } else {
           var subElementos = elementos[iterador].split(",");
           for (var iterador2 = 0; iterador2 < subElementos.length; iterador2++) {
-              if (!isNaN(subElementos[iterador2])) {
-                  resultado += parseInt(subElementos[iterador2]);
-              }
+            if (parseInt(subElementos[iterador2]) <= 1000) {
+              resultado += parseInt(subElementos[iterador2]);
+            }
           }
       }
   }

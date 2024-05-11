@@ -13,6 +13,10 @@ describe("calculadorSumaDeCadena", () => {
   it("Debería devolver la suma de los números separados por coma, guion o delimitador personalizado", () => {
     expect(calculadorSumaDeCadena("//[;] 6,3-2;1")).toEqual(12);
   });
-  
+  it("Debería devolver la suma de los números separados por coma, guion o delimitador personalizado, ignorando números mayores a 1000", () => {
+    expect(calculadorSumaDeCadena("2,1001")).toEqual(2);
+    expect(calculadorSumaDeCadena("1-2000")).toEqual(1);
+    expect(calculadorSumaDeCadena("//[;] 6,1002-3;2000")).toEqual(9);
+  });
   
 });
