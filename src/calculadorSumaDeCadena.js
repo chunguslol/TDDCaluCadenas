@@ -1,15 +1,16 @@
 function separarCadena(cadena) {
+  const coma = ",";
   if (!cadena) {
       return [];
   }
-  var delim = ",";
+  var delimitador = coma;
   if (cadena.startsWith("//")) {
-      var inicio = cadena.indexOf("[") + 1;
-      var fin = cadena.indexOf("]");
-      delim = cadena.substring(inicio, fin);
-      cadena = cadena.substring(fin + 2); 
+      var inicioDelimitador = cadena.indexOf("[") + 1;
+      var finDelimitador = cadena.indexOf("]");
+      delimitador = cadena.substring(inicioDelimitador, finDelimitador);
+      cadena = cadena.substring(finDelimitador + 2); 
   }
-  return cadena.split(new RegExp("[,|-]" + "|" + delim));
+  return cadena.split(new RegExp("[,|-]" + "|" + delimitador));
 }
 
 function sumarElementosdeCadena(elementos) {
@@ -18,16 +19,17 @@ function sumarElementosdeCadena(elementos) {
       if (!isNaN(elementos[iterador])) {
           resultado += parseInt(elementos[iterador]);
       } else {
-          var sub = elementos[iterador].split(",");
-          for (var i = 0; i < sub.length; i++) {
-              if (!isNaN(subElementos[i])) {
-                  resultado += parseInt(sub[i]);
+          var subElementos = elementos[iterador].split(",");
+          for (var iterador2 = 0; iterador2 < subElementos.length; iterador2++) {
+              if (!isNaN(subElementos[iterador2])) {
+                  resultado += parseInt(subElementos[iterador2]);
               }
           }
       }
   }
   return resultado;
 }
+
 
 function calculadorSumaDeCadena(cadena) {
   var elementos = separarCadena(cadena);
