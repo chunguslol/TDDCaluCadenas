@@ -4,6 +4,14 @@ describe("calculadorSumaDeCadena", () => {
   it("Deberia retornar nada cuando no se ingresa nada en el calculadorSumaDeCadena", () => {
     expect(calculadorSumaDeCadena("")).toEqual(0);
   });
+  it("Debería manejar el caso cuando la cadena está vacía", () => {
+    expect(calculadorSumaDeCadena("")).toEqual(0);
+  });
+  
+  it("Debería manejar el caso cuando la cadena no contiene números", () => {
+    expect(calculadorSumaDeCadena("abc")).toEqual(0);
+  });
+  
   it("Debería manejar el caso cuando la cadena no contiene números", () => {
     expect(calculadorSumaDeCadena("abc")).toEqual(0);
   });

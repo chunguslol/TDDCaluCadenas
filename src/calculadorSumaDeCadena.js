@@ -24,7 +24,6 @@ function separarCadena(cadena) {
   return cadenaSinDelimitador.split(new RegExp("[,|-]" + "|" + delimitador.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')));
 }
 
-
 function sumarElementosdeCadena(elementos) {
   var resultado = 0;
   for (var iterador = 0; iterador < elementos.length; iterador++) {
@@ -53,7 +52,7 @@ function sumarSubElementos(subElementos) {
 function calculadorSumaDeCadena(cadena) {
   var elementos = separarCadena(cadena);
   if (elementos.length === 0) {
-      return "No se puso nada en la cadena";
+      return 0;
   }
   return sumarElementosdeCadena(elementos);
 }
