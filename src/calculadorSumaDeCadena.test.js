@@ -4,6 +4,18 @@ describe("calculadorSumaDeCadena", () => {
   it("Deberia retornar nada cuando no se ingresa nada en el calculadorSumaDeCadena", () => {
     expect(calculadorSumaDeCadena("")).toEqual(0);
   });
+  it("Debería manejar el caso cuando la cadena no contiene números", () => {
+    expect(calculadorSumaDeCadena("abc")).toEqual(0);
+  });
+  it("Debería manejar el caso cuando la cadena contiene un solo número", () => {
+    expect(calculadorSumaDeCadena("123")).toEqual(123);
+  });
+  it("Debería manejar el caso cuando la cadena contiene varios números separados por coma", () => {
+    expect(calculadorSumaDeCadena("1,2,3")).toEqual(6);
+  });
+  it("Debería manejar el caso cuando la cadena contiene varios números separados por guion", () => {
+    expect(calculadorSumaDeCadena("1-2-3")).toEqual(6);
+  });
   it("Deberia devolver la suma de la cadena y deberia reconocer al poner con , la cadena", () => {
     expect(calculadorSumaDeCadena("10,20")).toEqual(30);
   });
@@ -24,4 +36,5 @@ describe("calculadorSumaDeCadena", () => {
     expect(calculadorSumaDeCadena("7,8-9")).toEqual(24);
     expect(calculadorSumaDeCadena("//[++++] 10++++11++++12")).toEqual(33);
   });
+  
 });

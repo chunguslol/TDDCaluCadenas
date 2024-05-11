@@ -50,7 +50,6 @@ function sumarSubElementos(subElementos) {
   return resultadoSub;
 }
 
-
 function calculadorSumaDeCadena(cadena) {
   var elementos = separarCadena(cadena);
   if (elementos.length === 0) {
