@@ -2,7 +2,14 @@ function separarCadena(cadena) {
   if (!cadena) {
       return [];
   }
-  return cadena.split(/[,|-]/);
+  var delim = ",";
+  if (cadena.startsWith("//")) {
+      var inicio = cadena.indexOf("[") + 1;
+      var fin = cadena.indexOf("]");
+      delim = cadena.substring(inicio, fin);
+      cadena = cadena.substring(fin + 2); 
+  }
+  return cadena.split(new RegExp("[,|-]" + "|" + delim));
 }
 
 function sumarElementosdeCadena(elementos) {
@@ -11,7 +18,12 @@ function sumarElementosdeCadena(elementos) {
       if (!isNaN(elementos[iterador])) {
           resultado += parseInt(elementos[iterador]);
       } else {
-          return "Elemento no valido " + elementos[iterador];
+          var sub = elementos[iterador].split(",");
+          for (var i = 0; i < sub.length; i++) {
+              if (!isNaN(subElementos[i])) {
+                  resultado += parseInt(sub[i]);
+              }
+          }
       }
   }
   return resultado;
