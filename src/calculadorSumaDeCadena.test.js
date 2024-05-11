@@ -24,6 +24,4 @@ describe("calculadorSumaDeCadena", () => {
     expect(calculadorSumaDeCadena("7,8-9")).toEqual(24);
     expect(calculadorSumaDeCadena("//[++++] 10++++11++++12")).toEqual(33);
   });
-
-  
 });

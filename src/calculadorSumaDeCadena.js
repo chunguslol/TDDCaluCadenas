@@ -10,7 +10,6 @@ function obtenerDelimitador(cadena) {
   return delimitador;
 }
 
-
 function obtenerCadenaSinDelimitador(cadena) {
   if (cadena.startsWith("//")) {
       var finDelimitador = cadena.indexOf("]") + 2;
