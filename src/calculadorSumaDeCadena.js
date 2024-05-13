@@ -57,4 +57,5 @@ function calculadorSumaDeCadena(cadena) {
   return sumarElementosdeCadena(elementos);
 }
 
-export default calculadorSumaDeCadena;
+export {calculadorSumaDeCadena,sumarSubElementos};
+

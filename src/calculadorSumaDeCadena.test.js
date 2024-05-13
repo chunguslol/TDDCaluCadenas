@@ -1,19 +1,16 @@
-import calculadorSumaDeCadena from "./calculadorSumaDeCadena.js";
+import {calculadorSumaDeCadena, sumarSubElementos} from "./calculadorSumaDeCadena.js";
 
 describe("calculadorSumaDeCadena", () => {
   it("Deberia retornar nada cuando no se ingresa nada en el calculadorSumaDeCadena", () => {
     expect(calculadorSumaDeCadena("")).toEqual(0);
   });
-  it("Debería manejar el caso cuando la cadena está vacía", () => {
-    expect(calculadorSumaDeCadena("")).toEqual(0);
-  });
   
   it("Debería manejar el caso cuando la cadena no contiene números", () => {
     expect(calculadorSumaDeCadena("abc")).toEqual(0);
   });
-  
-  it("Debería manejar el caso cuando la cadena no contiene números", () => {
-    expect(calculadorSumaDeCadena("abc")).toEqual(0);
+  it("debería devolver 0 cuando no hay elementos después de separar la cadena", () => {
+    const cadena = "//[;]";
+    expect(calculadorSumaDeCadena(cadena)).toEqual(0);
   });
   it("Debería manejar el caso cuando la cadena contiene un solo número", () => {
     expect(calculadorSumaDeCadena("123")).toEqual(123);
@@ -45,4 +42,17 @@ describe("calculadorSumaDeCadena", () => {
     expect(calculadorSumaDeCadena("//[++++] 10++++11++++12")).toEqual(33);
   });
   
+
+});
+
+describe("sumarSubElementos", () => {
+  it("debería sumar los elementos cuando hay más de un elemento en subElementos", () => {
+      const subElementos = "1,2,3";
+      expect(sumarSubElementos(subElementos)).toEqual(6);
+  });
+
+  it("debería devolver 0 cuando subElementos está vacío", () => {
+      const subElementos = "";
+      expect(sumarSubElementos(subElementos)).toEqual(0);
+  });
 });
