@@ -1,10 +1,9 @@
-import {calculadorSumaDeCadena, sumarSubElementos} from "./calculadorSumaDeCadena.js";
+import {calculadorSumaDeCadena,sumarSubElementos,sumarElementosdeCadena,separarCadena,obtenerCadenaSinDelimitador,obtenerDelimitador} from "./calculadorSumaDeCadena.js";
 
 describe("calculadorSumaDeCadena", () => {
   it("Deberia retornar nada cuando no se ingresa nada en el calculadorSumaDeCadena", () => {
     expect(calculadorSumaDeCadena("")).toEqual(0);
   });
-  
   it("Debería manejar el caso cuando la cadena no contiene números", () => {
     expect(calculadorSumaDeCadena("abc")).toEqual(0);
   });
@@ -41,8 +40,6 @@ describe("calculadorSumaDeCadena", () => {
     expect(calculadorSumaDeCadena("7,8-9")).toEqual(24);
     expect(calculadorSumaDeCadena("//[++++] 10++++11++++12")).toEqual(33);
   });
-  
-
 });
 
 describe("sumarSubElementos", () => {
@@ -56,3 +53,4 @@ describe("sumarSubElementos", () => {
       expect(sumarSubElementos(subElementos)).toEqual(0);
   });
 });
+

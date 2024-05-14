@@ -51,11 +51,8 @@ function sumarSubElementos(subElementos) {
 
 function calculadorSumaDeCadena(cadena) {
   var elementos = separarCadena(cadena);
-  if (elementos.length === 0) {
-      return 0;
-  }
   return sumarElementosdeCadena(elementos);
 }
 
-export {calculadorSumaDeCadena,sumarSubElementos};
+export {calculadorSumaDeCadena,sumarSubElementos,sumarElementosdeCadena,separarCadena,obtenerCadenaSinDelimitador,obtenerDelimitador};
 

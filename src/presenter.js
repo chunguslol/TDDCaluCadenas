@@ -1,4 +1,4 @@
-import {calculadorSumaDeCadena,sumarSubElementos} from './calculadorSumaDeCadena.js';
+import {calculadorSumaDeCadena,sumarSubElementos,sumarElementosdeCadena,separarCadena,obtenerCadenaSinDelimitador,obtenerDelimitador} from './calculadorSumaDeCadena.js';
 
 document.getElementById("sumar-form").addEventListener("submit", function(event) {
   event.preventDefault();
